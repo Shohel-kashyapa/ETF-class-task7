@@ -15,7 +15,18 @@
                 console.log(sid)
 
                 $.ajax({
-                    type
+                    type: 'GET',
+                    url: 'server.php',
+                    data: {
+                        sid: sid
+                    },
+                    cache: false,
+                    success: function(response) {
+                        console.log(response)
+                    },
+                    error: function(jqXhr, textStatus, errorMessage) {
+                        console.log(errorMessage)
+                    }
                 })
             })
         })
