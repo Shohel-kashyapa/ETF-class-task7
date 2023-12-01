@@ -1,0 +1,42 @@
+[
+    {
+        "sid": 1,
+        "name": "Ashen Prageeth",
+        "age": 22,
+        "address": "Kalutara",
+        "cgpa": 4.0
+    },
+
+    {
+        "sid": 2,
+        "name": "Zayuru Jithasara",
+        "age": 22,
+        "address": "Kalutara",
+        "cgpa": 3.89
+    },
+
+    {
+        "sid": 3,
+        "name": "Imod Nimsara",
+        "age": 22,
+        "address": "Horana",
+        "cgpa": 3.70
+    },
+
+    {
+        "sid": 4,
+        "name": "Gaythan Pramuditha",
+        "age": 23,
+        "address": "Panadura",
+        "cgpa": 2.4
+    },
+
+    {
+        "sid": 5,
+        "name": "Sadev Ekanayaka",
+        "age": 23,
+        "address": "Kollupitiya",
+        "cgpa": 4.0
+    }
+
+]
