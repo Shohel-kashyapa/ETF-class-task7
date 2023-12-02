@@ -12,7 +12,7 @@
             $("#form").submit(function(e){
                 e.preventDefault()
                 var sid = document.getElementById("sid").value
-                console.log(sid)
+                
 
                 $.ajax({
                     type: 'GET',
@@ -22,7 +22,19 @@
                     },
                     cache: false,
                     success: function(response) {
-                        console.log(response)
+                        if(response == 0) {
+                            alert("Student not found")
+                        } else {
+                            var $studentDetails = JSON.parse(response)
+                            $("#form").css("display", "none")
+                            $("#student-details").css("display", "flex")
+                            $("#student-sid").append($studentDetails.sid)
+                            $("#student-name").append($studentDetails.name)
+                            $("#student-age").append($studentDetails.age)
+                            $("#student-address").append($studentDetails.address)
+                            $("#student-cgpa").append($studentDetails.cgpa)
+                            
+                        }
                     },
                     error: function(jqXhr, textStatus, errorMessage) {
                         console.log(errorMessage)
@@ -39,14 +51,15 @@
            <input type="text" id="sid" placeholder="Enter the sid">
            <button>Find students</button>
         </form>
-        <form style="display: none;">
-            <p>SID: </p>
-            <p>Name: </p>
-            <p>Age: </p>
-            <p>Address: </p>
-            <p>CGPA: </p>
-            <button>Return to Search</button>
+        <form id="student-details" style="display: none;">
+                <p id="student-sid">SID: </p>
+                <p id="student-name">Name: </p>
+                <p id="student-age">Age: </p>
+                <p id="student-address">Address: </p>
+                <p id="student-cgpa">CGPA: </p>
+                <button>Return to Search</button>
         </form>
+  
     </main>
 </body>
 </html>
